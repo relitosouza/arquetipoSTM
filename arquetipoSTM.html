@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Perfil: Secretaria de Finanças</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .question-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .question-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .question-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            background-color: #f8f9fa;
+            border-color: var(--secondary);
+        }
+        
+        .option.selected {
+            background-color: #e3f2fd;
+            border-color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .profile-tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: var(--secondary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 12px 25px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        .results-container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .profile-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .profile-description {
+            text-align: left;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 15px;
+            min-width: 150px;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--secondary);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .question-container {
+                padding: 15px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Qual é o seu perfil na Secretaria de Finanças?</h1>
+            <p class="subtitle">Descubra qual arquétipo do DISC melhor representa seu estilo de trabalho</p>
+        </header>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="quiz-container">
+            <!-- As perguntas serão inseridas aqui via JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button id="prev-btn" disabled>Anterior</button>
+            <button id="next-btn">Próxima</button>
+        </div>
+        
+        <div id="results-container" class="results-container hidden">
+            <h2 class="profile-title" id="profile-name">Seu Perfil</h2>
+            <p id="profile-description" class="profile-description"></p>
+            
+            <div class="profile-stats">
+                <div class="stat">
+                    <div class="stat-value" id="total-questions">0</div>
+                    <div class="stat-label">Perguntas Respondidas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="profile-count">0</div>
+                    <div class="stat-label">Perfil Identificado</div>
+                </div>
+            </div>
+            
+            <button id="restart-btn" style="margin-top: 30px;">Refazer o Teste</button>
+        </div>
+        
+        <footer>
+            <p>Baseado na análise de arquétipos do DISC aplicados ao ambiente de Secretaria de Finanças</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dados das perguntas e perfis
+        const questions = [
+            {
+                id: 1,
+                text: "O sistema de pagamentos (SIAFEM/SIAFI) cai no último dia de pagamentos do mês. Qual é sua reação?",
+                options: [
+                    { text: "\"Eu avisei na reunião passada que esse sistema era arcaico e ninguém me ouviu. Agora os fornecedores não vão receber. Paciência.\"", profile: "Cínico" },
+                    { text: "\"Hahaha, que caos! Significa que o dinheiro 'sobrou'? Se não pagar hoje, paga amanhã, né? Alguém pede um café?\"", profile: "Bufão" },
+                    { text: "\"Não me importo. Liguem para o TI, virem-se. Eu quero o relatório de pagamentos na minha mesa às 17h, com ou sem sistema.\"", profile: "Narcisista" },
+                    { text: "\"Meu Deus! Calma! Os fornecedores vão ficar bravos! Vou ligar um por um para pedir desculpas e garantir que está tudo bem.\"", profile: "Inocente" }
+                ]
+            },
+            {
+                id: 2,
+                text: "Você tem que apresentar a audiência pública do Plano Plurianual (PPA). Qual o seu tema?",
+                options: [
+                    { text: "'A Realidade dos Números: Por que a Secretaria de Obras NÃO PODE ter o que pediu'. Vou usar 80 slides de Excel.", profile: "Âncora" },
+                    { text: "'A Cidade dos Sonhos: Como Construiremos 5 Hospistais e 3 Pontes!' (Mesmo que o orçamento só cubra o básico).", profile: "Sonhador" },
+                    { text: "'O Orçamento é Meu: Como Vamos Mudar o Jogo (Ignorando o Tribunal de Contas)'.", profile: "Rebelde" },
+                    { text: "Eu preparei 3 palestras. Uma otimista, uma realista e uma pessimista. Estou analisando o humor do público para decidir qual usar. Estou em pânico.", profile: "Neurótico" }
+                ]
+            },
+            {
+                id: 3,
+                text: "O Secretário de Saúde entra na sua sala desesperado, dizendo que o orçamento dele acabou (de novo).",
+                options: [
+                    { text: "\"Isso é um problema de planejamento dele, não meu. Que ele aprenda a gerenciar. Próximo.\"", profile: "Narcisista" },
+                    { text: "\"Calma, senta aí. Vamos 'negociar'. Se você me apoiar naquela pauta do IPTU, talvez eu encontre uma 'reserva' para você.\"", profile: "Jogador" },
+                    { text: "\"Oh, céus! Mas as crianças precisam de remédio! Vou ver o que posso fazer. Vou tentar remanejar minhas próprias despesas. Não gosto de ver ninguém triste.\"", profile: "Inocente" },
+                    { text: "\"De novo? Todo ano a mesma história. Ele gasta tudo em 6 meses e vem chorar. A resposta é não. Sempre foi não.\"", profile: "Cínico" }
+                ]
+            },
+            {
+                id: 4,
+                text: "Como é a sua mesa na Secretaria?",
+                options: [
+                    { text: "Limpa. Só o notebook. Papel é burocracia e atraso. As pessoas que venham falar comigo.", profile: "Rebelde" },
+                    { text: "Impecável. A LRF está aqui, a LDO aqui. As canetas estão alinhadas por cor. Se alguém tirar meu grampeador do lugar, eu sei.", profile: "Neurótico" },
+                    { text: "Tem fotos da minha família, a xícara que ganhei do sindicato e uns biscoitos para a equipe. É um ambiente acolhedor.", profile: "Inocente" },
+                    { text: "Uma bagunça! Tem 3 xícaras de café, o rascunho de uma nova política tributária num guardanapo e o convite da festa de ontem.", profile: "Excêntrico" }
+                ]
+            },
+            {
+                id: 5,
+                text: "O que você pensa sobre a 'execução orçamentária' em conjunto com as outras secretarias?",
+                options: [
+                    { text: "\"É o processo de ter que explicar 10 vezes a Lei 4.320 para pessoas que não sabem o que é 'dotação' e, no fim, eu ter que glosar o empenho delas.\"", profile: "Âncora" },
+                    { text: "\"É fundamental. É sobre apoio mútuo, harmonia e garantir que ninguém (especialmente o Social) fique sem recursos.\"", profile: "Inocente" },
+                    { text: "\"É um grupo de secretários que existe para concordar com meu cronograma de desembolso. Eu tenho a chave do cofre.\"", profile: "Narcisista" },
+                    { text: "\"É a melhor parte! É onde a gente conversa, ri, troca ideias malucas sobre como captar recursos! E se a gente fizesse um 'Pix Premiado' municipal?\"", profile: "Excêntrico" }
+                ]
+            },
+            {
+                id: 6,
+                text: "No fim do ano, você descobre um 'excesso de arrecadação' (dinheiro extra) inesperado. O que você faz?",
+                options: [
+                    { text: "\"Festa! Ligo para os vereadores aliados e digo: 'Adivinhem? Aquela emenda que não ia sair... VAI SAIR!'\"", profile: "Jogador" },
+                    { text: "\"Guardo. Não conto para ninguém. É minha 'reserva de contingência secreta' para usar quando o Prefeito me pedir algo impossível.\"", profile: "Rebelde" },
+                    { text: "\"Finalmente! O primeiro passo para construir o hospital de 20 andares que eu sonhei! (Mesmo que o dinheiro só pague a fundação).\"", profile: "Sonhador" },
+                    { text: "\"Isso vai estragar todas as minhas projeções. Tenho que recalcular o superávit, o impacto na Dívida... isso é muito estressante. E se o Tribunal de Contas achar que eu errei no cálculo inicial?\"", profile: "Neurótico" }
+                ]
+            },
+            {
+                id: 7,
+                text: "A arrecadação caiu. Você precisa fazer um corte (contingenciamento) no orçamento. Qual seu 'jeito fácil'?",
+                options: [
+                    { text: "\"Não existe jeito fácil. É terrível! Vou cortar 2% de todo mundo, igualitariamente, para ser justo e ninguém brigar comigo.\"", profile: "Inocente" },
+                    { text: "\"O 'jeito fácil' é o que causa o problema. O jeito certo é cortar os contratos supérfluos, que eu já listei aqui, e que vocês ignoraram 3 meses atrás.\"", profile: "Âncora" },
+                    { text: "\"Jeito fácil? Eu só... 'esqueço' de liberar o limite de empenho. Quando eles virem, o mês acabou. Hahaha. Problema resolvido.\"", profile: "Bufão" },
+                    { text: "\"O jeito fácil é cortar 100% da Secretaria de Cultura e 50% da de Esportes. A minha secretaria fica intacta. Próxima pergunta.\"", profile: "Narcisista" }
+                ]
+            },
+            {
+                id: 8,
+                text: "Como você reage aos rumores (rádio-corredor) de que o Prefeito vai trocar o comando da sua pasta?",
+                options: [
+                    { text: "\"Fico muito triste. Será que fiz algo errado? Eu gosto de todo mundo. Vou perguntar ao meu diretor se ele está chateado comigo.\"", profile: "Inocente" },
+                    { text: "\"Adoro! Chego mais perto, peço detalhes! Quem? Por quê? Para onde eu iria? Isso é empolgante! Uma nova aventura!\"", profile: "Excêntrico" },
+                    { text: "\"Eu geralmente sou o assunto da fofoca. E se não for, eu mesmo ligo para um jornalista e planto uma nota para ver o caos.\"", profile: "Jogador" },
+                    { text: "\"Finjo que não ouço, mas anoto. É mais um dado que prova que o governo está instável e que tudo vai dar errado em outubro.\"", profile: "Cínico" }
+                ]
+            },
+            {
+                id: 9,
+                text: "O Prefeito apresenta uma ideia que você sabe que é fiscalmente irresponsável (e talvez ilegal). Você:",
+                options: [
+                    { text: "\"Interrompo e digo na frente de todos: 'Prefeito, isso é ilegal e vai dar improbidade. Não vou assinar. Faça meu plano.'\"", profile: "Rebelde" },
+                    { text: "\"Fico quieto. Não quero criar conflito. Ele é o Prefeito... deve saber o que faz. Vou torcer para o Jurídico barrar.\"", profile: "Inocente" },
+                    { text: "\"Levanto a mão e digo: 'Com todo respeito, Prefeito, mas o Artigo 16 da LRF impede isso. Tenho aqui o parecer do Tribunal de Contas sobre um caso idêntico.'\"", profile: "Âncora" },
+                    { text: "\"Apoio com entusiasmo! 'Prefeito, genial! Brilhante!' (Depois, ligo para o Controle Interno e pergunto: 'Vocês viram o absurdo que ele quer fazer? Ainda bem que eu não sou o ordenador de despesa').\"", profile: "Bufão" }
+                ]
+            },
+            {
+                id: 10,
+                text: "O que você mais teme no fechamento do balanço anual?",
+                options: [
+                    { text: "\"O tédio. Ficar 3 dias trancado numa sala conferindo número. É uma prisão. Prefiro estar na rua vendo onde o dinheiro foi gasto.\"", profile: "Excêntrico" },
+                    { text: "\"O fracasso. Olhar para os números e ver que não conseguimos realizar aquele projeto social que eu tanto sonhei.\"", profile: "Sonhador" },
+                    { text: "\"O estresse de saber que um centavo pode estar fora do lugar. E se o ativo não bater com o passivo? E se o Tribunal de Contas achar um erro de R$ 1,30?\"", profile: "Neurótico" },
+                    { text: "\"Que, apesar de todo o meu esforço para manter as contas em dia, o relatório final seja usado para uma propaganda política mentirosa.\"", profile: "Cínico" }
+                ]
+            }
+        ];
+
+        // Descrições dos perfis
+        const profiles = {
+            "Âncora": {
+                name: "A Âncora (O Pilar da Lógica)",
+                description: "Este perfil é definido pela necessidade de ordem e lógica. Em todas as perguntas, sua resposta foi a mais estruturada, baseada em dados, planilhas ou regulamentos. Ele se vê como o único adulto na sala, e sua função é aplicar a lógica onde os outros trazem o caos ou o conflito.",
+                disc: "C (Conformidade)",
+                priority: "Fazer o que é correto (baseado nas regras)"
+            },
+            "Sonhador": {
+                name: "O Sonhador (O Otimista Inabalável)",
+                description: "Este arquétipo ignora sistematicamente os obstáculos (como a falta de dinheiro) e foca apenas na visão. Suas respostas não são práticas, são inspiradoras. Ele vive da energia e da persuasão e genuinamente acredita que o otimismo pode cobrir um rombo orçamentário.",
+                disc: "I (Influência)",
+                priority: "Perseguir a inspiração (baseado na emoção)"
+            },
+            "Neurótico": {
+                name: "O Neurótico (O Gerente de Riscos)",
+                description: "Este perfil é movido pela ansiedade. Diferente da Âncora (que usa dados para agir), o Neurótico usa dados para se preocupar. Suas respostas são definidas pelo 'pior cenário'. Ele precisa de regras não para ser eficiente, mas para se sentir seguro.",
+                disc: "C (Conformidade)",
+                priority: "Evitar o desastre (baseado no medo)"
+            },
+            "Rebelde": {
+                name: "O Rebelde (O Trator de Regras)",
+                description: "As respostas deste perfil são definidas pela ação e pelo desafio. Ele vê o orçamento e as regras como coisas a serem contornadas. Ele usa o conflito como ferramenta e foca apenas no seu resultado, ignorando as necessidades dos outros.",
+                disc: "D (Dominância)",
+                priority: "Atingir o resultado (baseado na vontade)"
+            },
+            "Inocente": {
+                name: "O Inocente (O Protetor da Harmonia)",
+                description: "Este é o arquétipo mais puro do 'S'. Em todas as respostas, sua prioridade foi o impacto humano ou a manutenção da paz. Ele é leal, confiável e suas ações são 100% focadas em evitar o conflito e manter o ambiente estável.",
+                disc: "S (Estabilidade)",
+                priority: "Manter a harmonia (baseado no apoio)"
+            },
+            "Excêntrico": {
+                name: "O Excêntrico (O Dínamo Criativo)",
+                description: "Este perfil é movido a estímulos. A análise mostra que ele não se importa com processo ou resultado, mas sim com a experiência. Sua mesa é caótica, suas ideias são inovadoras e seu maior medo é o tédio. Ele traz a energia da 'tempestade de ideias' para um ambiente rígido.",
+                disc: "I (Influência)",
+                priority: "Buscar a novidade (baseado na energia)"
+            },
+            "Bufão": {
+                name: "O Bufão (O Mestre do Jeitinho)",
+                description: "Este arquétipo usa o charme social para evitar o trabalho difícil e a responsabilidade. A análise mostra que ele procura o caminho de menor resistência. Suas respostas são de desvio, usando o humor para navegar por situações que exigiriam competência técnica.",
+                disc: "I (Influência)",
+                priority: "Encontrar o atalho (baseado na esperteza social)"
+            },
+            "Cínico": {
+                name: "O Cínico (O Estrategista Pessimista)",
+                description: "Este perfil é o 'C' que já desistiu. Ele é analítico, mas usa sua análise para confirmar sua visão de que tudo falhará. Suas respostas são passivo-agressivas. Ele vê o erro antes de todos (como a Âncora), mas em vez de tentar consertar, ele se prepara para o fracasso.",
+                disc: "C (Conformidade)",
+                priority: "Confirmar a falha (baseado na experiência)"
+            },
+            "Narcisista": {
+                name: "O Narcisista (O Solitário no Pódio)",
+                description: "Este é o 'D' focado no eu. A análise das respostas é clara: o universo gira ao seu redor. O corte orçamentário não é sobre o município; é sobre como ele não será afetado. Ele demanda resultados, mas se exime do esforço coletivo.",
+                disc: "D (Dominância)",
+                priority: "Garantir o benefício próprio (baseado no ego)"
+            },
+            "Jogador": {
+                name: "O Jogador (O Articulador Político)",
+                description: "Este perfil é o mestre da persuasão. A análise mostra que ele vê cada interação como uma transação social ou política. O orçamento não é sobre números ou harmonia; é sobre poder e influência. Ele usa o bônus para 'festa' e o corte para 'negociar' apoio.",
+                disc: "I (Influência) com traços D (Dominância)",
+                priority: "Vencer o jogo (baseado na persuasão)"
+            }
+        };
+
+        // Variáveis de estado
+        let currentQuestion = 0;
+        let answers = [];
+        let profileCounts = {};
+
+        // Elementos DOM
+        const quizContainer = document.getElementById('quiz-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressBar = document.getElementById('progress');
+        const resultsContainer = document.getElementById('results-container');
+        const profileName = document.getElementById('profile-name');
+        const profileDescription = document.getElementById('profile-description');
+        const totalQuestions = document.getElementById('total-questions');
+        const profileCount = document.getElementById('profile-count');
+        const restartBtn = document.getElementById('restart-btn');
+
+        // Inicializar o quiz
+        function initQuiz() {
+            showQuestion();
+            updateProgress();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', goToPreviousQuestion);
+            nextBtn.addEventListener('click', goToNextQuestion);
+            restartBtn.addEventListener('click', restartQuiz);
+        }
+
+        // Mostrar a pergunta atual
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            
+            let optionsHTML = '';
+            question.options.forEach((option, index) => {
+                const isSelected = answers[currentQuestion] === index;
+                optionsHTML += `
+                    <div class="option ${isSelected ? 'selected' : ''}" data-index="${index}">
+                        ${option.text}
+                        <div class="profile-tag">${option.profile}</div>
+                    </div>
+                `;
+            });
+            
+            quizContainer.innerHTML = `
+                <div class="question-container">
+                    <div class="question-number">Pergunta ${currentQuestion + 1} de ${questions.length}</div>
+                    <div class="question-text">${question.text}</div>
+                    <div class="options">${optionsHTML}</div>
+                </div>
+            `;
+            
+            // Adicionar event listeners às opções
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', () => {
+                    selectOption(parseInt(option.dataset.index));
+                });
+            });
+            
+            // Atualizar estado dos botões
+            prevBtn.disabled = currentQuestion === 0;
+            nextBtn.textContent = currentQuestion === questions.length - 1 ? 'Ver Resultados' : 'Próxima';
+        }
+
+        // Selecionar uma opção
+        function selectOption(optionIndex) {
+            answers[currentQuestion] = optionIndex;
+            showQuestion();
+        }
+
+        // Atualizar barra de progresso
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Ir para a próxima pergunta
+        function goToNextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+                updateProgress();
+            } else {
+                showResults();
+            }
+        }
+
+        // Ir para a pergunta anterior
+        function goToPreviousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+                updateProgress();
+            }
+        }
+
+        // Mostrar resultados
+        function showResults() {
+            // Calcular perfil predominante
+            profileCounts = {};
+            answers.forEach((answerIndex, questionIndex) => {
+                if (answerIndex !== undefined) {
+                    const profile = questions[questionIndex].options[answerIndex].profile;
+                    profileCounts[profile] = (profileCounts[profile] || 0) + 1;
+                }
+            });
+            
+            // Encontrar perfil com mais respostas
+            let predominantProfile = '';
+            let maxCount = 0;
+            
+            for (const [profile, count] of Object.entries(profileCounts)) {
+                if (count > maxCount) {
+                    maxCount = count;
+                    predominantProfile = profile;
+                }
+            }
+            
+            // Exibir resultados
+            quizContainer.classList.add('hidden');
+            document.querySelector('.navigation').classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+            
+            const profileInfo = profiles[predominantProfile];
+            profileName.textContent = profileInfo.name;
+            profileDescription.innerHTML = `
+                <p><strong>Perfil DISC:</strong> ${profileInfo.disc}</p>
+                <p><strong>Prioridade:</strong> ${profileInfo.priority}</p>
+                <p><strong>Descrição:</strong> ${profileInfo.description}</p>
+            `;
+            
+            totalQuestions.textContent = answers.filter(a => a !== undefined).length;
+            profileCount.textContent = predominantProfile;
+        }
+
+        // Reiniciar o quiz
+        function restartQuiz() {
+            currentQuestion = 0;
+            answers = [];
+            profileCounts = {};
+            
+            quizContainer.classList.remove('hidden');
+            document.querySelector('.navigation').classList.remove('hidden');
+            resultsContainer.classList.add('hidden');
+            
+            showQuestion();
+            updateProgress();
+        }
+
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', initQuiz);
+    </script>
+</body>
+</html>
