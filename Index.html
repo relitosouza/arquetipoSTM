@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Personalidade: Qual seu estilo na Secretaria?</title>
+    <style>
+        :root {
+            --primary: #27ae60;
+            --secondary: #2ecc71;
+            --accent: #e67e22;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --fun: #9b59b6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            color: var(--dark);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 3px dashed var(--fun);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            margin: 0 5px;
+        }
+        
+        .question-container {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid var(--secondary);
+        }
+        
+        .question-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option:hover {
+            background-color: #f8f9fa;
+            border-color: var(--fun);
+            transform: scale(1.02);
+        }
+        
+        .option.selected {
+            background-color: #e8f6f3;
+            border-color: var(--primary);
+            font-weight: 500;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 0 #d35400;
+        }
+        
+        button:hover {
+            background-color: #f39c12;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #d35400;
+        }
+        
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #d35400;
+        }
+        
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 4px 0 #95a5a6;
+        }
+        
+        .results-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            border: 3px solid var(--fun);
+        }
+        
+        .profile-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .profile-description {
+            text-align: left;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 15px;
+            min-width: 150px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--fun);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .fun-element {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .question-container {
+                padding: 15px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="emoji">🎭</span> Qual seu Estilo na Secretaria? <span class="emoji">📊</span></h1>
+            <p class="subtitle">Descubra qual personagem você é no teatro das finanças públicas!</p>
+        </header>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="quiz-container">
+            <!-- As perguntas serão inseridas aqui via JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button id="prev-btn" disabled>⬅️ Anterior</button>
+            <button id="next-btn">Próxima ➡️</button>
+        </div>
+        
+        <div id="results-container" class="results-container hidden">
+            <h2 class="profile-title" id="profile-name">Seu Perfil 🎉</h2>
+            <p id="profile-description" class="profile-description"></p>
+            
+            <div class="profile-stats">
+                <div class="stat">
+                    <div class="stat-value" id="total-questions">0</div>
+                    <div class="stat-label">Perguntas Respondidas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="profile-count">0</div>
+                    <div class="stat-label">Perfil Identificado</div>
+                </div>
+            </div>
+            
+            <button id="restart-btn" style="margin-top: 30px; background-color: var(--fun); box-shadow: 0 4px 0 #8e44ad;">🔄 Refazer o Teste</button>
+        </div>
+        
+        <footer>
+            <p>Um teste divertido baseado na análise de arquétipos do DISC no ambiente de Secretaria de Finanças</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dados das perguntas e perfis - Versão Descontraída
+        const questions = [
+            {
+                id: 1,
+                text: "O sistema de pagamentos cai no último dia útil do mês. Sua reação?",
+                options: [
+                    { text: "🤷‍♂️ 'Bem, eu avisei que isso ia acontecer! Agora é torcer para o TI resolver...'", profile: "Cínico" },
+                    { text: "😄 'Opa, hora do café extra! Enquanto o sistema volta, bora tomar um expresso?'", profile: "Bufão" },
+                    { text: "😤 'Alguém me explica COMO isso aconteceu? Quero respostas e relatórios na minha mesa JÁ!'", profile: "Narcisista" },
+                    { text: "🥺 'Gente, os fornecedores vão ficar tão chateados! Vou ligar para todos pedindo desculpas...'", profile: "Inocente" }
+                ]
+            },
+            {
+                id: 2,
+                text: "Você vai apresentar o Plano Plurianual. Qual será seu tema?",
+                options: [
+                    { text: "📊 'A Matemática Não Mente: Por que seu projeto favorito não cabe no orçamento' (com 50 gráficos)", profile: "Âncora" },
+                    { text: "🌈 'Cidade dos Sonhos: Vamos construir 10 parques, 5 hospitais e um teleférico!' (orçamento? depois a gente vê)", profile: "Sonhador" },
+                    { text: "🔥 'Quebrando as Regras: Como fazer mais gastando menos (e irritando o Tribunal de Contas)'", profile: "Rebelde" },
+                    { text: "😰 Preparei 7 versões diferentes e não sei qual usar. Alguém me ajuda a escolher?", profile: "Neurótico" }
+                ]
+            },
+            {
+                id: 3,
+                text: "O Secretário de Saúde chega dizendo que o orçamento acabou... de novo!",
+                options: [
+                    { text: "🙄 'Problema dele, não meu. Next!'", profile: "Narcisista" },
+                    { text: "😏 'Senta aqui, amigo... vamos fazer uma troquinha. Me apoia no IPTU que eu te ajudo'", profile: "Jogador" },
+                    { text: "😢 'Puxa, as crianças precisam de remédios! Vou ver se consigo ajudar, mesmo que me custe o almoço'", profile: "Inocente" },
+                    { text: "🤦 'Todo mês a mesma novela! Já estou até decorando o script...'", profile: "Cínico" }
+                ]
+            },
+            {
+                id: 4,
+                text: "Como está organizada sua mesa de trabalho?",
+                options: [
+                    { text: "💻 Só o notebook. Papel é coisa do século passado!", profile: "Rebelde" },
+                    { text: "📐 Régua, esquadro e canetas por ordem de cor. Mexeu, morreu.", profile: "Neurótico" },
+                    { text: "🍪 Fotos da família, xícara personalizada e biscoitos para visitas. Casa da vovó style!", profile: "Inocente" },
+                    { text: "🎪 Parece que uma festa passou por aqui! Café, ideias soltas e lembranças de eventos.", profile: "Excêntrico" }
+                ]
+            },
+            {
+                id: 5,
+                text: "O que você acha das reuniões de execução orçamentária?",
+                options: [
+                    { text: "📚 'É minha missão sagrada ensinar Lei 4.320 para quem não quer aprender'", profile: "Âncora" },
+                    { text: "❤️ 'Adoro! É quando a gente se ajuda e ninguém fica sem recursos. Tudo pelo time!'", profile: "Inocente" },
+                    { text: "👑 'São necessárias para que todos confirmem que minhas decisões são as melhores'", profile: "Narcisista" },
+                    { text: "💡 'Melhor parte do dia! Bora criar um imposto sobre ar-condicionado? Ou um bingo municipal?'", profile: "Excêntrico" }
+                ]
+            },
+            {
+                id: 6,
+                text: "Apareceu dinheiro extra no caixa! E agora?",
+                options: [
+                    { text: "🎉 'Festa! Hora de fazer aquelas emendas parlamentares que estavam engavetadas!'", profile: "Jogador" },
+                    { text: "🤫 'Shhh! Vou guardar isso para uma emergência... ou para quando o prefeito pedir um milagre'", profile: "Rebelde" },
+                    { text: "🏗️ 'Finalmente! Dá para começar aquele centro cultural de 10 andares! (pelo menos a fundação)'", profile: "Sonhador" },
+                    { text: "😫 'Ai, que ansiedade! Isso vai desequilibrar todas minhas planilhas! E o Tribunal de Contas?'", profile: "Neurótico" }
+                ]
+            },
+            {
+                id: 7,
+                text: "A arrecadação caiu e precisamos cortar gastos. Seu plano?",
+                options: [
+                    { text: "😔 'Vou cortar 1,5% de todo mundo, assim ninguém fica bravo comigo'", profile: "Inocente" },
+                    { text: "📋 'Já tenho aqui a lista dos gastos desnecessários que vocês insistem em manter'", profile: "Âncora" },
+                    { text: "😜 'É só 'esquecer' de liberar algumas verbas. Problema resolvido! Quem café?'", profile: "Bufão" },
+                    { text: "💅 'Cultura e Esportes que se virem. Minha secretaria está blindada, obviamente'", profile: "Narcisista" }
+                ]
+            },
+            {
+                id: 8,
+                text: "Ouvir falar que podem trocar você de cargo. Sua reação?",
+                options: [
+                    { text: "😟 'Será que fiz algo errado? Todo mundo ainda gosta de mim?'", profile: "Inocente" },
+                    { text: "🎪 'Uhuu! Novos ares! Novos desafios! Já estou pensando em ideias malucas!'", profile: "Excêntrico" },
+                    { text: "🃏 'Hmm, interessante... Vou espalhar um boato ainda melhor para ver o circo pegar fogo'", profile: "Jogador" },
+                    { text: "🤨 'Anotado. Mais uma prova de que esse governo não sabe o que faz'", profile: "Cínico" }
+                ]
+            },
+            {
+                id: 9,
+                text: "O Prefeito tem uma ideia... criativa (e talvez ilegal). Você:",
+                options: [
+                    { text: "🚫 'Prefeito, com todo respeito, isso é ilegal e eu não vou assinar. Ponto.'", profile: "Rebelde" },
+                    { text: "😶 'Melhor ficar quieto... ele é o chefe, deve saber o que faz'", profile: "Inocente" },
+                    { text: "⚖️ 'Excelente ideia, mas o artigo 42 da LRF diz que... (30 minutos de explicação técnica)'", profile: "Âncora" },
+                    { text: "👏 'Genial, chefia! Brilhante! (ps: alguém avisa o controle interno?)'", profile: "Bufão" }
+                ]
+            },
+            {
+                id: 10,
+                text: "O que mais te assusta no fechamento do balanço anual?",
+                options: [
+                    { text: "😴 'O tédio de ficar conferindo números. Prefiro estar na rua vendo as obras!'", profile: "Excêntrico" },
+                    { text: "💔 'Ver que não conseguimos realizar aquele projeto social dos meus sonhos'", profile: "Sonhador" },
+                    { text: "😱 'Um centavo fora do lugar! E se o Tribunal achar um erro de R$ 0,50?'", profile: "Neurótico" },
+                    { text: "🎭 'Que usem meus relatórios impecáveis para fazer propaganda enganosa'", profile: "Cínico" }
+                ]
+            }
+        ];
+
+        // Descrições dos perfis - Versão Descontraída
+        const profiles = {
+            "Âncora": {
+                name: "🦸‍♂️ O Super-Herói das Planilhas",
+                description: "Você é a pessoa que salva o dia com gráficos e leis! Enquanto todos correm desesperados, você já tem a planilha pronta, o artigo da lei citado e a solução na ponta da língua. Seu superpoder? Transformar caos em colunas organizadas!",
+                disc: "C (Conformidade)",
+                priority: "Salvar o mundo, uma planilha de cada vez"
+            },
+            "Sonhador": {
+                name: "🌈 O Mestre dos Sonhos Coloridos",
+                description: "Você vê possibilidades onde outros veem problemas! Seu orçamento tem arco-íris e unicórnios, e você genuinamente acredita que otimismo pode cobrir qualquer rombo. 'Dinheiro? Isso é detalhe!' é seu lema favorito.",
+                disc: "I (Influência)",
+                priority: "Espalhar alegria e projetos impossíveis"
+            },
+            "Neurótico": {
+                name: "😰 O Detetive do Apocalipse",
+                description: "Você já previu 157 formas diferentes do mundo acabar... só nesta semana! Enquanto todos comemoram, você já está preparando o plano B, C e D para quando tudo der errado. Seu lema: 'Melhor prevenir do que... bem, você sabe.'",
+                disc: "C (Conformidade)",
+                priority: "Sobreviver ao próximo desastre iminente"
+            },
+            "Rebelde": {
+                name: "🔥 O Justiceiro das Regras",
+                description: "Regras? Limites? São apenas sugestões criativas para você! Você vê burocracia como um desafio pessoal e adora encontrar 'atalhos criativos'. Seu escritório deveria ter uma placa: 'Cuidado: ideias revolucionárias em andamento'.",
+                disc: "D (Dominância)",
+                priority: "Mudar o sistema (com ou sem permissão)"
+            },
+            "Inocente": {
+                name: "🐰 O Coelho da Harmonia",
+                description: "Você é tão fofinho que até as planilhas sorriem para você! Seu maior medo é ver alguém triste, então sempre arruma um jeitinho de ajudar todo mundo. Se o orçamento fosse uma festa, você seria o anfitrião que garante que todos se divirtam.",
+                disc: "S (Estabilidade)",
+                priority: "Fazer todo mundo se sentir amado"
+            },
+            "Excêntrico": {
+                name: "🎪 O Diretor de Circo Criativo",
+                description: "Sua mente é um parque de diversões de ideias malucas! Enquanto todos discutem números, você está pensando em como financiar um teleférico ou criar um imposto sobre solidão. Sua mesa parece que uma festa passou por ali... e provavelmente passou mesmo!",
+                disc: "I (Influência)",
+                priority: "Transformar o tédio em diversão"
+            },
+            "Bufão": {
+                name: "🃏 O Mágico do Jeitinho",
+                description: "Você resolve problemas com um sorriso no rosto e uma piada na ponta da língua! Seu lema é: 'Por que fazer direito se podemos fazer divertido?' Especialista em encontrar atalhos criativos e distribuir cafezinhos durante as crises.",
+                disc: "I (Influência)",
+                priority: "Sobreviver rindo"
+            },
+            "Cínico": {
+                name: "🦉 O Sábio do 'Eu Avisei'",
+                description: "Você já sabe que tudo vai dar errado... e geralmente está certo! Enquanto todos se empolgam com novos projetos, você já está de prontidão para dizer 'eu avisei'. Seu superpoder? Ver o fracasso antes mesmo dele acontecer.",
+                disc: "C (Conformidade)",
+                priority: "Provocar o 'eu disse' com precisão cirúrgica"
+            },
+            "Narcisista": {
+                name: "👑 A Estrela do Show",
+                description: "O universo gira em torno de você - e que universo maravilhoso! Seus projetos são os melhores, suas ideias 
