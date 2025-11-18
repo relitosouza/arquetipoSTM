@@ -1,199 +1,184 @@
-// Dados das perguntas e perfis - Versão Atualizada
+// Dados das perguntas e perfis - Versão Cotidiano
 const questions = [
     {
         id: 1,
-        text: "O sistema interno cai no último dia útil do mês. Sua reação?",
+        text: "Vocês vão dividir a conta do bar com 10 amigos. A comanda chega e é uma confusão. O que você faz?",
         options: [
-            { text: "🤷‍♂️ 'Bem, eu avisei que isso ia acontecer! Agora é torcer para o TI resolver...'", profile: "Cínico" },
-            { text: "😄 'Opa, hora do café extra! Enquanto o sistema volta, bora tomar um expresso?'", profile: "Bufão" },
-            { text: "😤 'Alguém me explica COMO isso aconteceu? Quero respostas e relatórios na minha mesa JÁ!'", profile: "Narcisista" },
-            { text: "🥺 'Gente, os colegas vão ficar tão chateados! Vou ligar para todos pedindo desculpas...'", profile: "Inocente" }
+            { text: "Pego a nota fiscal, abro a calculadora do celular e calculo centavo por centavo quem comeu o quê, incluindo os 10%. \"Fulano, você deve R$ 34,50 porque pediu batata extra.\"", profile: "Âncora" },
+            { text: "\"Ai, gente, para não ter briga... divide igual pra todo mundo? Se alguém comeu menos, eu pago a diferença, não tem problema, só quero ir embora em paz.\"", profile: "Inocente" },
+            { text: "\"Eu só bebi água e comi uma azeitona. Não vou pagar o rateio da cerveja de vocês. Tirem a minha parte e se virem com o resto.\"", profile: "Narcisista" },
+            { text: "\"Ih, esqueci a carteira! Que loucura, né? Alguém cobre aí e depois eu faço um Pix? (Spoiler: Nunca fará o Pix).\"", profile: "Bufão" }
         ]
     },
     {
         id: 2,
-        text: "Você vai apresentar o planejamento anual da equipe. Qual será seu tema?",
+        text: "Você está montando um móvel comprado na internet (tipo IKEA) cheio de parafusos.",
         options: [
-            { text: "📊 'A Matemática Não Mente: Por que seu projeto favorito não cabe no orçamento' (com 50 gráficos)", profile: "Âncora" },
-            { text: "🌈 'Equipe dos Sonhos: Vamos implementar 10 projetos inovadores!' (orçamento? depois a gente vê)", profile: "Sonhador" },
-            { text: "🔥 'Quebrando as Regras: Como fazer mais gastando menos (e irritando o controle interno)'", profile: "Rebelde" },
-            { text: "😰 Preparei 7 versões diferentes e não sei qual usar. Alguém me ajuda a escolher?", profile: "Neurótico" }
+            { text: "Conto todos os 342 parafusos e separo por tamanho em potinhos antes de começar. Se faltar uma arruela, tenho um ataque de pânico e ligo para o SAC chorando.", profile: "Neurótico" },
+            { text: "Jogo o manual de instruções no lixo. \"Isso é para os fracos. Eu sei montar uma estante.\" (A estante fica torta e sobrarão 5 peças).", profile: "Rebelde" },
+            { text: "\"Vai ficar lindo! Vou montar rapidinho e vai parecer capa de revista!\" (3 horas depois, está sentado no chão chorando abraçado a uma tábua).", profile: "Sonhador" },
+            { text: "\"Eu disse para comprar o móvel que já vem montado. Isso é madeira aglomerada de péssima qualidade. Vai quebrar em dois meses. Mas ok, me passa a chave de fenda.\"", profile: "Cínico" }
         ]
     },
     {
         id: 3,
-        text: "O coordenador de outro setor chega dizendo que o orçamento acabou... de novo!",
+        text: "Grupo de WhatsApp da Família: Alguém manda uma \"Fake News\" absurda no domingo de manhã.",
         options: [
-            { text: "🙄 'Problema dele, não meu. Next!'", profile: "Narcisista" },
-            { text: "😏 'Senta aqui, amigo... vamos fazer uma troquinha. Me apoia naquele projeto que eu te ajudo'", profile: "Jogador" },
-            { text: "😢 'Puxa, o time precisa de recursos! Vou ver se consigo ajudar, mesmo que me custe o almoço'", profile: "Inocente" },
-            { text: "🤦 'Todo mês a mesma novela! Já estou até decorando o script...'", profile: "Cínico" }
+            { text: "Respondo imediatamente com o link de 3 agências de checagem de fatos, desmentindo ponto a ponto. \"Tia, isso é tecnicamente impossível pelas leis da física.\"", profile: "Âncora" },
+            { text: "Ignoro a notícia e mando um áudio de 4 minutos contando que sonhei que fui abduzido por alienígenas veganos. Mudo o foco do grupo para o caos aleatório.", profile: "Excêntrico" },
+            { text: "Mando um sticker de alguém rindo, nem leio a notícia, e aproveito para perguntar quem vai levar cerveja no churrasco. Política é chata, festa é legal.", profile: "Jogador" },
+            { text: "\"Bom dia, família linda! ❤️ Que Deus abençoe o domingo de todos! Não vamos brigar por política, né? Olha essa foto de gatinho!\"", profile: "Inocente" }
         ]
     },
     {
         id: 4,
-        text: "Como está organizada sua mesa de trabalho?",
+        text: "Planejando uma viagem de férias em grupo.",
         options: [
-            { text: "💻 Só o notebook. Papel é coisa do século passado!", profile: "Rebelde" },
-            { text: "📐 Régua, esquadro e canetas por ordem de cor. Mexeu, morreu.", profile: "Neurótico" },
-            { text: "🍪 Fotos da família, xícara personalizada e biscoitos para visitas. Casa da vovó style!", profile: "Inocente" },
-            { text: "🎪 Parece que uma festa passou por aqui! Café, ideias soltas e lembranças de eventos.", profile: "Excêntrico" }
+            { text: "\"Nós vamos para onde EU quiser. Eu quero praia, hotel 5 estrelas e quero que vocês tirem fotos minhas o dia todo. Se não for assim, eu não vou.\"", profile: "Narcisista" },
+            { text: "\"Eu fiz um cronograma no Excel com intervalos de 15 minutos para banho e alimentação. Precisamos chegar no aeroporto 6 horas antes para evitar imprevistos.\"", profile: "Neurótico" },
+            { text: "\"Bora pra onde o vento levar! Não reservei hotel, não vi passagem, mas vai dar certo! A gente dorme na praia se precisar! Uhuuul!\"", profile: "Bufão" },
+            { text: "\"Vai chover. Eu vi a previsão. O hotel parece sujo nas fotos do Tripadvisor. Vai ser horrível, vamos gastar dinheiro à toa e voltar cansados.\"", profile: "Cínico" }
         ]
     },
     {
         id: 5,
-        text: "O que você acha das reuniões de distribuição de tarefas?",
+        text: "Você está preso num engarrafamento monstro e o carro não anda há 20 minutos.",
         options: [
-            { text: "📚 'É minha missão sagrada ensinar os procedimentos para quem não quer aprender'", profile: "Âncora" },
-            { text: "❤️ 'Adoro! É quando a gente se ajuda e ninguém fica sobrecarregado. Tudo pelo time!'", profile: "Inocente" },
-            { text: "👑 'São necessárias para que todos confirmem que minhas decisões são as melhores'", profile: "Narcisista" },
-            { text: "💡 'Melhor parte do dia! Bora criar um sistema de rodízio de funções? Ou um bingo de tarefas?'", profile: "Excêntrico" }
+            { text: "Começo a cortar caminho pelo acostamento ou tento dar ré na contramão. As leis de trânsito são sugestões, e eu tenho pressa.", profile: "Rebelde" },
+            { text: "Aumento o som no máximo e faço um show de karaokê sozinho dentro do carro. Aproveito para imaginar que estou num clipe musical.", profile: "Sonhador" },
+            { text: "Abro o Waze, o Google Maps e o rádio de trânsito para analisar matematicamente qual rota alternativa economizaria 3 minutos.", profile: "Âncora" },
+            { text: "\"Tudo bem, respira. É uma oportunidade de ouvir aquele podcast atrasado. Não vou buzinar para não estressar os outros motoristas.\"", profile: "Inocente" }
         ]
     },
     {
         id: 6,
-        text: "Apareceu verba extra no departamento! E agora?",
+        text: "Chegou a hora de cozinhar o jantar, mas faltam ingredientes.",
         options: [
-            { text: "🎉 'Festa! Hora de fazer aqueles projetos que estavam engavetados!'", profile: "Jogador" },
-            { text: "🤫 'Shhh! Vou guardar isso para uma emergência... ou para quando o diretor pedir um milagre'", profile: "Rebelde" },
-            { text: "🏗️ 'Finalmente! Dá para começar aquele projeto inovador! (pelo menos a fase inicial)'", profile: "Sonhador" },
-            { text: "😫 'Ai, que ansiedade! Isso vai desequilibrar todas minhas planilhas! E a auditoria?'", profile: "Neurótico" }
+            { text: "\"Sem problemas! Vou inventar um prato novo: Macarrão com doce de leite e azeitona. Vai ser uma experiência gastronômica sensorial!\"", profile: "Excêntrico" },
+            { text: "\"Sabia. Ninguém faz compras nessa casa. Vou pedir pizza, que nem da outra vez, e reclamar que chegou fria.\"", profile: "Cínico" },
+            { text: "\"Isso não pode acontecer! A receita exige manjericão fresco e só temos orégano seco! O sabor vai ficar desequilibrado! O jantar está arruinado!\"", profile: "Neurótico" },
+            { text: "\"Alô? Mãe? Posso ir jantar aí hoje? Tô levando uns amigos.\" (Resolve o problema terceirizando para os outros).", profile: "Jogador" }
         ]
     },
     {
         id: 7,
-        text: "O orçamento caiu e precisamos redistribuir recursos. Seu plano?",
+        text: "Um amigo termina o namoro e está chorando no sofá.",
         options: [
-            { text: "😔 'Vou cortar 1,5% de todo mundo, assim ninguém fica bravo comigo'", profile: "Inocente" },
-            { text: "📋 'Já tenho aqui a lista dos gastos desnecessários que vocês insistem em manter'", profile: "Âncora" },
-            { text: "😜 'É só 'esquecer' de liberar algumas verbas. Problema resolvido! Quem café?'", profile: "Bufão" },
-            { text: "💅 'Setores menos importantes que se virem. Minha área está blindada, obviamente'", profile: "Narcisista" }
+            { text: "\"Nossa, que chato. Mas olha, você viu meu corte de cabelo novo? Ficou ótimo, né? Enfim, supera isso aí que hoje tem balada.\"", profile: "Narcisista" },
+            { text: "\"Vamos lá agora quebrar o carro dele(a)! Eu dirijo! Ninguém mexe com amigo meu e sai impune!\"", profile: "Rebelde" },
+            { text: "\"Oh, meu anjo... chora tudo o que tem pra chorar. Fiz chocolate quente e trouxe cobertor. Vou ficar abraçadinho com você até passar.\"", profile: "Inocente" },
+            { text: "\"Logicamente, o relacionamento já não tinha futuro. Fiz uma lista dos prós e contras do seu ex. Estatisticamente, você vai encontrar alguém melhor em 3 meses.\"", profile: "Âncora" }
         ]
     },
     {
         id: 8,
-        text: "Ouvir falar que podem redistribuir os cargos comissionados. Sua reação?",
+        text: "Dia de faxina geral na casa.",
         options: [
-            { text: "😟 'Será que fiz algo errado? Todo mundo ainda gosta de mim?'", profile: "Inocente" },
-            { text: "🎪 'Uhuu! Novos ares! Novos desafios! Já estou pensando em ideias malucas!'", profile: "Excêntrico" },
-            { text: "🃏 'Hmm, interessante... Vou espalhar um boato ainda melhor para ver o circo pegar fogo'", profile: "Jogador" },
-            { text: "🤨 'Anotado. Mais uma prova de que a administração não sabe o que faz'", profile: "Cínico" }
+            { text: "Começo a limpar, acho um álbum de fotos antigo, sento no chão e fico 4 horas vendo fotos e lembrando do passado. A casa continua suja.", profile: "Sonhador" },
+            { text: "Limpo o rodapé com escova de dente. Desinfeto as maçanetas três vezes. Se alguém pisar no meu chão molhado, eu cometo um crime.", profile: "Neurótico" },
+            { text: "\"Vou colocar uma música alta, dançar com a vassoura e limpar só o que a visita vê. O que os olhos não veem, a sujeira não existe!\"", profile: "Bufão" },
+            { text: "Contrato alguém para limpar ou simplesmente decido que a bagunça é meu \"estilo de vida\" e vou para o bar.", profile: "Rebelde" }
         ]
     },
     {
         id: 9,
-        text: "A diretoria tem uma ideia... criativa (e talvez fora do regulamento). Você:",
+        text: "Você precisa reclamar com o vizinho que está fazendo barulho às 2 da manhã.",
         options: [
-            { text: "🚫 'Diretoria, com todo respeito, isso é irregular e eu não vou assinar. Ponto.'", profile: "Rebelde" },
-            { text: "😶 'Melhor ficar quieto... eles são a chefia, devem saber o que fazem'", profile: "Inocente" },
-            { text: "⚖️ 'Excelente ideia, mas o artigo 42 do regulamento diz que... (30 minutos de explicação técnica)'", profile: "Âncora" },
-            { text: "👏 'Genial, chefia! Brilhante! (ps: alguém avisa o compliance?)'", profile: "Bufão" }
+            { text: "Fico na cama acordado, sofrendo, com medo de ir lá e ele ficar bravo. Coloco um travesseiro na cabeça e rezo para ele parar.", profile: "Inocente" },
+            { text: "Vou lá, toco a campainha e, quando ele atende, peço uma cerveja e entro na festa. Se não pode vencê-los, junte-se a eles.", profile: "Jogador" },
+            { text: "Desço com o Regulamento Interno do Condomínio impresso, grifado na página da \"Lei do Silêncio\", e ameaço formalmente com multa administrativa.", profile: "Âncora" },
+            { text: "Desligo a chave geral de energia do prédio inteiro. Se eu não durmo, ninguém tem luz. Problema resolvido.", profile: "Rebelde" }
         ]
     },
     {
         id: 10,
-        text: "O que mais te assusta no fechamento do balanço mensal?",
+        text: "O caixa do supermercado passou um item duas vezes por engano (R$ 2,00 a mais).",
         options: [
-            { text: "😴 'O tédio de ficar conferindo números. Prefiro estar na área operacional!'", profile: "Excêntrico" },
-            { text: "💔 'Ver que não conseguimos realizar aquele projeto dos meus sonhos'", profile: "Sonhador" },
-            { text: "😱 'Um centavo fora do lugar! E se a auditoria achar um erro de R$ 0,50?'", profile: "Neurótico" },
-            { text: "🎭 'Que usem meus relatórios impecáveis para justificar decisões questionáveis'", profile: "Cínico" }
+            { text: "Faço um escândalo. \"Você sabe quem eu sou? Isso é um roubo! Quero falar com o gerente agora!\"", profile: "Narcisista" },
+            { text: "\"Típico. O sistema é feito para enganar o consumidor. Vou pagar, mas vou postar uma review de 1 estrela no Google chegando em casa.\"", profile: "Cínico" },
+            { text: "Percebo o erro, mas tenho vergonha de travar a fila. Pago os 2 reais a mais e vou embora triste, mas evito o confronto.", profile: "Inocente" },
+            { text: "Confiro a nota fiscal na saída, volto, entro na fila de novo, preencho o formulário de estorno e aguardo os 15 minutos necessários para reaver meus R$ 2,00. É uma questão de princípio contábil.", profile: "Neurótico" }
         ]
     }
 ];
 
-// Descrições dos perfis - Versão Descontraída
+// Descrições dos perfis - Versão Cotidiano
 const profiles = {
     "Âncora": {
-        name: "🌳 O Guardião das Regras",
-        description: "Você é a pessoa que mantém tudo nos eixos! Enquanto todos correm desesperados, você já tem a planilha pronta, o regulamento citado e a solução na ponta da língua. Seu superpoder? Transformar caos em processos organizados!",
+        name: "🌳 A Âncora (O Chato da Lógica)",
+        description: "Você é a pessoa que lê o manual de instruções e divide a conta do bar na calculadora. Seus amigos te acham meio rígido, mas sempre te ligam quando precisam resolver um B.O. burocrático.",
         disc: "C (Conformidade)",
-        priority: "Manter a harmonia através da organização"
+        priority: "Manter a ordem e a lógica em tudo"
     },
     "Sonhador": {
-        name: "🌈 O Visionário Criativo",
-        description: "Você vê possibilidades onde outros veem problemas! Seu planejamento tem cores e inovações, e você genuinamente acredita que criatividade pode superar qualquer obstáculo. 'Limites? Isso é detalhe!' é seu lema favorito.",
+        name: "🌈 O Sonhador (A Cabeça nas Nuvens)",
+        description: "Você vive numa realidade paralela onde tudo vai dar certo, mesmo sem planejamento. Você esquece de pagar a conta de luz, mas faz ótimas playlists para jantar à luz de velas.",
         disc: "I (Influência)",
-        priority: "Inspirar a equipe com novas ideias"
+        priority: "Ver beleza e possibilidade em tudo"
     },
     "Neurótico": {
-        name: "🍃 O Protetor Preventivo",
-        description: "Você já previu 157 formas diferentes dos projetos darem errado... só nesta semana! Enquanto todos comemoram, você já está preparando o plano B, C e D. Seu lema: 'Melhor prevenir do que remediar, sempre!'",
+        name: "🍃 O Neurótico (O Fiscal da Ansiedade)",
+        description: "Você tem um plano A, B e C para tudo. Seu maior passatempo é se preocupar com coisas que nunca vão acontecer. Sua casa é limpa, mas sua mente é um caos de \"e se?\".",
         disc: "C (Conformidade)",
-        priority: "Garantir que tudo funcione perfeitamente"
+        priority: "Prevenir todos os desastres possíveis"
     },
     "Rebelde": {
-        name: "🔥 O Agente de Mudanças",
-        description: "Regras? Limites? São apenas convites para pensar diferente! Você vê burocracia como oportunidade para inovar e adora encontrar 'soluções criativas'. Seu espaço deveria ter uma placa: 'Cuidado: transformação em progresso'.",
+        name: "🔥 O Rebelde (O \"Dono\" da Rua)",
+        description: "Regras? Que regras? Você estaciona em vaga proibida e acha que fila é para os outros. Você resolve problemas na força bruta e odeia que te digam o que fazer.",
         disc: "D (Dominância)",
-        priority: "Evoluir os processos constantemente"
+        priority: "Viver sem amarras ou limitações"
     },
     "Inocente": {
-        name: "🌸 O Cultivador de Harmonia",
-        description: "Você é tão harmonioso que até as planilhas sorriem para você! Seu maior talento é fazer todo mundo se sentir acolhido e importante. Se o trabalho fosse um jardim, você seria o jardineiro que cuida de cada flor.",
+        name: "🌸 O Inocente (O \"Deixa Disso\")",
+        description: "Você pede desculpas até quando a culpa não é sua. Sua missão na Terra é evitar conflitos e garantir que todos estejam confortáveis, mesmo que você tenha que se sacrificar.",
         disc: "S (Estabilidade)",
-        priority: "Cultivar um ambiente positivo para todos"
+        priority: "Cultivar harmonia e paz acima de tudo"
     },
     "Excêntrico": {
-        name: "🎪 O Semeador de Ideias",
-        description: "Sua mente é um viveiro de ideias inovadoras! Enquanto todos discutem processos, você está pensando em como revolucionar a forma de trabalhar. Seu espaço reflete sua criatividade - sempre cheio de vida e inspiração!",
+        name: "🎪 O Excêntrico (O Aleatório)",
+        description: "Você é a pessoa que compra uma lhama de pelúcia numa terça-feira. Ninguém sabe qual será seu próximo passo. Você torna a vida divertida, mas é péssimo para organizar compromissos.",
         disc: "I (Influência)",
-        priority: "Oxigenar a equipe com novas perspectivas"
+        priority: "Surpreender e divertir a todos"
     },
     "Bufão": {
-        name: "🌞 O Iluminador de Ambientes",
-        description: "Você resolve problemas com leveza e bom humor! Seu lema é: 'Por que fazer pesado se podemos fazer com alegria?' Especialista em encontrar soluções descomplicadas e espalhar energia positiva pelo ambiente.",
+        name: "🌞 O Bufão (O \"Inimigo do Fim\")",
+        description: "Para você, tudo é piada. Responsabilidade é alergia. Você é a alma da festa, mas seus amigos sabem que não podem contar com você para ajudar na mudança de casa.",
         disc: "I (Influência)",
-        priority: "Manter o clima leve e produtivo"
+        priority: "Viver o momento com alegria e despreocupação"
     },
     "Cínico": {
-        name: "🦉 O Observador Realista",
-        description: "Você tem o dom de enxergar os desafios antes deles aparecerem! Enquanto todos se empolgam com novidades, você já está avaliando os riscos. Seu talento? Antecipar problemas e preparar a equipe.",
+        name: "🦉 O Cínico (O Reclamão Profissional)",
+        description: "Você já sai de casa sabendo que vai dar errado. E quando dá errado, você sente um prazer mórbido em dizer \"Eu avisei\". Você é inteligente, mas cansativo.",
         disc: "C (Conformidade)",
-        priority: "Manter os pés no chão com sabedoria"
+        priority: "Prever e apontar todos os problemas"
     },
     "Narcisista": {
-        name: "🌺 O Florescer de Talentos",
-        description: "Você traz confiança e determinação para a equipe! Acredita firmemente no seu potencial e no da sua equipe. Seu departamento é seu jardim particular - cuida com dedicação para que tudo floresça lindamente.",
+        name: "🌺 O Narcisista (O Alecrim Dourado)",
+        description: "O mundo é o seu palco e os outros são figurantes. Você não tem defeitos, apenas \"características intensas\". Se algo deu errado, a culpa é óbvia e exclusivamente dos outros.",
         disc: "D (Dominância)",
-        priority: "Fazer brilhar os talentos da equipe"
+        priority: "Ser o centro das atenções sempre"
     },
     "Jogador": {
-        name: "🕊️ O Diplomata Natural",
-        description: "Você vê a equipe como um ecossistema onde cada um tem seu papel! Sua especialidade é criar sinergias e conectar pessoas. 'Vamos trabalhar juntos?' é sua frase favorita para construir pontes.",
+        name: "🕊️ O Jogador (O \"Jeitinho Brasileiro\")",
+        description: "Você navega pela vida na base da lábia. Resolve problemas com charme, contatos e improviso. Regras são obstáculos que você pula com um sorriso no rosto.",
         disc: "I (Influência) com traços D (Dominância)",
-        priority: "Harmonizar diferentes talentos e visões"
+        priority: "Resolver tudo com criatividade e charme"
     }
 };
 
-// Frases de carregamento por categoria de perfil - Versão Reduzida
-const loadingMessages = {
-    "Líderes": [
-        "Analisando seu estilo de liderança natural...",
-        "Mapeando suas habilidades de influência...", 
-        "Finalizando seu perfil de guia da equipe..."
-    ],
-    "Criativos": [
-        "Explorando sua criatividade e inovação...",
-        "Mapeando suas ideias revolucionárias...",
-        "Preparando suas soluções criativas..."
-    ],
-    "Estáveis": [
-        "Analisando seu talento para harmonia...",
-        "Mapeando suas habilidades de apoio...",
-        "Finalizando seu perfil de estabilidade..."
-    ],
-    "Analíticos": [
-        "Processando sua atenção aos detalhes...",
-        "Analisando seu método organizacional...",
-        "Finalizando seu perfil de precisão..."
-    ],
-    "Geral": [
-        "Conectando suas respostas aos arquétipos...",
-        "Processando seu estilo único de trabalho...",
-        "Preparando sua análise personalizada..."
-    ]
-};
+// Frases de carregamento - Versão Cotidiano
+const loadingMessages = [
+    "Calculando quantos parafusos sobraram na montagem do móvel...",
+    "Consultando o horóscopo para ver se a culpa é de Mercúrio Retrógrado...",
+    "Analisando se você divide a conta ou esquece a carteira...",
+    "Verificando se você é do tipo que manda áudio de 5 minutos...",
+    "Contando quantas vezes você revirou os olhos hoje...",
+    "Simulando uma briga no grupo da família...",
+    "Procurando a Nota Fiscal do seu comportamento...",
+    "Calibrando seu nível de paciência no trânsito...",
+    "Tentando entender por que você comprou aquilo na promoção...",
+    "Julgando suas escolhas de vida... (brincadeira, ou não)..."
+];
 
 // Mapeamento de perfis para categorias
 const profileCategories = {
@@ -332,23 +317,27 @@ function showLoading() {
         }
     }
     
-    // Selecionar categoria do perfil predominante
-    const category = profileCategories[predominantProfile] || "Geral";
-    const messages = loadingMessages[category];
-    
-    // Mostrar mensagens de carregamento sequenciais
+    // Mostrar mensagens de carregamento aleatórias
     let messageIndex = 0;
+    const usedMessages = new Set();
     
     loadingInterval = setInterval(() => {
-        loadingText.innerHTML = messages[messageIndex] + '<span class="loading-dots"></span>';
+        // Selecionar uma mensagem aleatória que ainda não foi usada
+        let randomMessage;
+        do {
+            randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+        } while (usedMessages.has(randomMessage) && usedMessages.size < loadingMessages.length);
+        
+        usedMessages.add(randomMessage);
+        loadingText.innerHTML = randomMessage + '<span class="loading-dots"></span>';
         messageIndex++;
         
-        if (messageIndex >= messages.length) {
+        if (messageIndex >= 3) { // Mostrar 3 mensagens antes dos resultados
             clearInterval(loadingInterval);
-            // Mostrar resultados após 3 segundos (aumentado)
+            // Mostrar resultados após 3 segundos
             setTimeout(showResults, 3000);
         }
-    }, 4000); // Aumentado para 4 segundos por mensagem
+    }, 4000); // 4 segundos por mensagem
 }
 
 // Mostrar resultados
