@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Personalidade: Qual seu estilo na Secretaria?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="emoji">🎭</span> Qual seu Estilo na Secretaria? <span class="emoji">📊</span></h1>
+            <p class="subtitle">Descubra qual personagem você é no teatro das finanças públicas!</p>
+        </header>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        <div id="quiz-container">
+            <!-- As perguntas serão inseridas aqui via JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button id="prev-btn" disabled>⬅️ Anterior</button>
+            <button id="next-btn">Próxima ➡️</button>
+        </div>
+        
+        <div id="loading-container" class="loading-container hidden">
+            <div class="loading-text" id="loading-text">
+                Preparando sua análise personalizada...
+            </div>
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <div id="results-container" class="results-container hidden">
+            <h2 class="profile-title" id="profile-name">Seu Perfil 🎉</h2>
+            <p id="profile-description" class="profile-description"></p>
+            
+            <div class="profile-stats">
+                <div class="stat">
+                    <div class="stat-value" id="total-questions">0</div>
+                    <div class="stat-label">Perguntas Respondidas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="profile-count">0</div>
+                    <div class="stat-label">Perfil Identificado</div>
+                </div>
+            </div>
+            
+            <button id="restart-btn" style="margin-top: 30px; background-color: var(--fun); box-shadow: 0 4px 0 #8e44ad;">🔄 Refazer o Teste</button>
+        </div>
+        
+        <footer>
+            <p>Um teste divertido baseado na análise de arquétipos do DISC no ambiente de Secretaria de Finanças</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
