@@ -1,10 +1,14 @@
 :root {
     --primary: #27ae60;
     --secondary: #2ecc71;
-    --accent: #e67e22;
+    --accent: #3498db;
     --light: #ecf0f1;
     --dark: #2c3e50;
-    --fun: #9b59b6;
+    --fun: #16a085;
+    --nature: #27ae60;
+    --water: #3498db;
+    --earth: #8e44ad;
+    --sun: #f39c12;
 }
 
 * {
@@ -15,7 +19,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
@@ -35,13 +39,14 @@ header {
     border-radius: 20px;
     margin-bottom: 30px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border: 3px dashed var(--fun);
+    border: 3px dashed var(--nature);
+    background: linear-gradient(135deg, #ffffff, #f8fffe);
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: var(--primary);
+    color: var(--nature);
     text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
 
@@ -62,7 +67,8 @@ h1 {
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    border: 2px solid var(--secondary);
+    border: 2px solid var(--nature);
+    background: linear-gradient(135deg, #ffffff, #f0f9f4);
 }
 
 .question-container:hover {
@@ -72,7 +78,7 @@ h1 {
 
 .question-number {
     font-weight: bold;
-    color: var(--accent);
+    color: var(--nature);
     margin-bottom: 10px;
     font-size: 1.1rem;
     display: flex;
@@ -94,25 +100,26 @@ h1 {
 
 .option {
     padding: 15px;
-    border: 2px solid #ddd;
+    border: 2px solid #bdc3c7;
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    background: #f8f9fa;
 }
 
 .option:hover {
-    background-color: #f8f9fa;
-    border-color: var(--fun);
+    background-color: #e8f5e8;
+    border-color: var(--nature);
     transform: scale(1.02);
 }
 
 .option.selected {
     background-color: #e8f6f3;
-    border-color: var(--primary);
+    border-color: var(--nature);
     font-weight: 500;
-    box-shadow: 0 0 0 2px var(--primary);
+    box-shadow: 0 0 0 2px var(--nature);
 }
 
 .navigation {
@@ -123,7 +130,7 @@ h1 {
 
 button {
     padding: 15px 30px;
-    background-color: var(--accent);
+    background-color: var(--nature);
     color: white;
     border: none;
     border-radius: 50px;
@@ -131,18 +138,18 @@ button {
     font-size: 1.1rem;
     transition: all 0.3s ease;
     font-weight: bold;
-    box-shadow: 0 4px 0 #d35400;
+    box-shadow: 0 4px 0 #219653;
 }
 
 button:hover {
-    background-color: #f39c12;
+    background-color: #2ecc71;
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #d35400;
+    box-shadow: 0 6px 0 #219653;
 }
 
 button:active {
     transform: translateY(2px);
-    box-shadow: 0 2px 0 #d35400;
+    box-shadow: 0 2px 0 #219653;
 }
 
 button:disabled {
@@ -159,11 +166,12 @@ button:disabled {
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     text-align: center;
-    border: 3px solid var(--fun);
+    border: 3px solid var(--nature);
+    background: linear-gradient(135deg, #ffffff, #f0f9f4);
 }
 
 .profile-title {
-    color: var(--primary);
+    color: var(--nature);
     margin-bottom: 20px;
     font-size: 2rem;
 }
@@ -174,7 +182,7 @@ button:disabled {
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 15px;
-    border-left: 5px solid var(--accent);
+    border-left: 5px solid var(--nature);
 }
 
 .profile-stats {
@@ -193,7 +201,7 @@ button:disabled {
 .stat-value {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--fun);
+    color: var(--nature);
 }
 
 .stat-label {
@@ -216,7 +224,7 @@ button:disabled {
 
 .progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, var(--nature), var(--secondary));
     width: 0%;
     transition: width 0.5s ease;
     border-radius: 10px;
@@ -226,7 +234,7 @@ footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
-    color: white;
+    color: #2c3e50;
     font-size: 0.9rem;
 }
 
@@ -237,7 +245,8 @@ footer {
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     text-align: center;
-    border: 3px solid var(--fun);
+    border: 3px solid var(--nature);
+    background: linear-gradient(135deg, #ffffff, #f0f9f4);
 }
 
 .loading-text {
@@ -248,13 +257,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.5;
 }
 
 .loading-spinner {
     width: 50px;
     height: 50px;
     border: 5px solid #f3f3f3;
-    border-top: 5px solid var(--primary);
+    border-top: 5px solid var(--nature);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto;

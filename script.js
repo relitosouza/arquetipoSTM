@@ -1,32 +1,32 @@
-// Dados das perguntas e perfis - Versão Descontraída
+// Dados das perguntas e perfis - Versão Atualizada
 const questions = [
     {
         id: 1,
-        text: "O sistema de pagamentos cai no último dia útil do mês. Sua reação?",
+        text: "O sistema interno cai no último dia útil do mês. Sua reação?",
         options: [
             { text: "🤷‍♂️ 'Bem, eu avisei que isso ia acontecer! Agora é torcer para o TI resolver...'", profile: "Cínico" },
             { text: "😄 'Opa, hora do café extra! Enquanto o sistema volta, bora tomar um expresso?'", profile: "Bufão" },
             { text: "😤 'Alguém me explica COMO isso aconteceu? Quero respostas e relatórios na minha mesa JÁ!'", profile: "Narcisista" },
-            { text: "🥺 'Gente, os fornecedores vão ficar tão chateados! Vou ligar para todos pedindo desculpas...'", profile: "Inocente" }
+            { text: "🥺 'Gente, os colegas vão ficar tão chateados! Vou ligar para todos pedindo desculpas...'", profile: "Inocente" }
         ]
     },
     {
         id: 2,
-        text: "Você vai apresentar o Plano Plurianual. Qual será seu tema?",
+        text: "Você vai apresentar o planejamento anual da equipe. Qual será seu tema?",
         options: [
             { text: "📊 'A Matemática Não Mente: Por que seu projeto favorito não cabe no orçamento' (com 50 gráficos)", profile: "Âncora" },
-            { text: "🌈 'Cidade dos Sonhos: Vamos construir 10 parques, 5 hospitais e um teleférico!' (orçamento? depois a gente vê)", profile: "Sonhador" },
-            { text: "🔥 'Quebrando as Regras: Como fazer mais gastando menos (e irritando o Tribunal de Contas)'", profile: "Rebelde" },
+            { text: "🌈 'Equipe dos Sonhos: Vamos implementar 10 projetos inovadores!' (orçamento? depois a gente vê)", profile: "Sonhador" },
+            { text: "🔥 'Quebrando as Regras: Como fazer mais gastando menos (e irritando o controle interno)'", profile: "Rebelde" },
             { text: "😰 Preparei 7 versões diferentes e não sei qual usar. Alguém me ajuda a escolher?", profile: "Neurótico" }
         ]
     },
     {
         id: 3,
-        text: "O Secretário de Saúde chega dizendo que o orçamento acabou... de novo!",
+        text: "O coordenador de outro setor chega dizendo que o orçamento acabou... de novo!",
         options: [
             { text: "🙄 'Problema dele, não meu. Next!'", profile: "Narcisista" },
-            { text: "😏 'Senta aqui, amigo... vamos fazer uma troquinha. Me apoia no IPTU que eu te ajudo'", profile: "Jogador" },
-            { text: "😢 'Puxa, as crianças precisam de remédios! Vou ver se consigo ajudar, mesmo que me custe o almoço'", profile: "Inocente" },
+            { text: "😏 'Senta aqui, amigo... vamos fazer uma troquinha. Me apoia naquele projeto que eu te ajudo'", profile: "Jogador" },
+            { text: "😢 'Puxa, o time precisa de recursos! Vou ver se consigo ajudar, mesmo que me custe o almoço'", profile: "Inocente" },
             { text: "🤦 'Todo mês a mesma novela! Já estou até decorando o script...'", profile: "Cínico" }
         ]
     },
@@ -42,62 +42,62 @@ const questions = [
     },
     {
         id: 5,
-        text: "O que você acha das reuniões de execução orçamentária?",
+        text: "O que você acha das reuniões de distribuição de tarefas?",
         options: [
-            { text: "📚 'É minha missão sagrada ensinar Lei 4.320 para quem não quer aprender'", profile: "Âncora" },
-            { text: "❤️ 'Adoro! É quando a gente se ajuda e ninguém fica sem recursos. Tudo pelo time!'", profile: "Inocente" },
+            { text: "📚 'É minha missão sagrada ensinar os procedimentos para quem não quer aprender'", profile: "Âncora" },
+            { text: "❤️ 'Adoro! É quando a gente se ajuda e ninguém fica sobrecarregado. Tudo pelo time!'", profile: "Inocente" },
             { text: "👑 'São necessárias para que todos confirmem que minhas decisões são as melhores'", profile: "Narcisista" },
-            { text: "💡 'Melhor parte do dia! Bora criar um imposto sobre ar-condicionado? Ou um bingo municipal?'", profile: "Excêntrico" }
+            { text: "💡 'Melhor parte do dia! Bora criar um sistema de rodízio de funções? Ou um bingo de tarefas?'", profile: "Excêntrico" }
         ]
     },
     {
         id: 6,
-        text: "Apareceu dinheiro extra no caixa! E agora?",
+        text: "Apareceu verba extra no departamento! E agora?",
         options: [
-            { text: "🎉 'Festa! Hora de fazer aquelas emendas parlamentares que estavam engavetadas!'", profile: "Jogador" },
-            { text: "🤫 'Shhh! Vou guardar isso para uma emergência... ou para quando o prefeito pedir um milagre'", profile: "Rebelde" },
-            { text: "🏗️ 'Finalmente! Dá para começar aquele centro cultural de 10 andares! (pelo menos a fundação)'", profile: "Sonhador" },
-            { text: "😫 'Ai, que ansiedade! Isso vai desequilibrar todas minhas planilhas! E o Tribunal de Contas?'", profile: "Neurótico" }
+            { text: "🎉 'Festa! Hora de fazer aqueles projetos que estavam engavetados!'", profile: "Jogador" },
+            { text: "🤫 'Shhh! Vou guardar isso para uma emergência... ou para quando o diretor pedir um milagre'", profile: "Rebelde" },
+            { text: "🏗️ 'Finalmente! Dá para começar aquele projeto inovador! (pelo menos a fase inicial)'", profile: "Sonhador" },
+            { text: "😫 'Ai, que ansiedade! Isso vai desequilibrar todas minhas planilhas! E a auditoria?'", profile: "Neurótico" }
         ]
     },
     {
         id: 7,
-        text: "A arrecadação caiu e precisamos cortar gastos. Seu plano?",
+        text: "O orçamento caiu e precisamos redistribuir recursos. Seu plano?",
         options: [
             { text: "😔 'Vou cortar 1,5% de todo mundo, assim ninguém fica bravo comigo'", profile: "Inocente" },
             { text: "📋 'Já tenho aqui a lista dos gastos desnecessários que vocês insistem em manter'", profile: "Âncora" },
             { text: "😜 'É só 'esquecer' de liberar algumas verbas. Problema resolvido! Quem café?'", profile: "Bufão" },
-            { text: "💅 'Cultura e Esportes que se virem. Minha secretaria está blindada, obviamente'", profile: "Narcisista" }
+            { text: "💅 'Setores menos importantes que se virem. Minha área está blindada, obviamente'", profile: "Narcisista" }
         ]
     },
     {
         id: 8,
-        text: "Ouvir falar que podem trocar você de cargo. Sua reação?",
+        text: "Ouvir falar que podem redistribuir os cargos comissionados. Sua reação?",
         options: [
             { text: "😟 'Será que fiz algo errado? Todo mundo ainda gosta de mim?'", profile: "Inocente" },
             { text: "🎪 'Uhuu! Novos ares! Novos desafios! Já estou pensando em ideias malucas!'", profile: "Excêntrico" },
             { text: "🃏 'Hmm, interessante... Vou espalhar um boato ainda melhor para ver o circo pegar fogo'", profile: "Jogador" },
-            { text: "🤨 'Anotado. Mais uma prova de que esse governo não sabe o que faz'", profile: "Cínico" }
+            { text: "🤨 'Anotado. Mais uma prova de que a administração não sabe o que faz'", profile: "Cínico" }
         ]
     },
     {
         id: 9,
-        text: "O Prefeito tem uma ideia... criativa (e talvez ilegal). Você:",
+        text: "A diretoria tem uma ideia... criativa (e talvez fora do regulamento). Você:",
         options: [
-            { text: "🚫 'Prefeito, com todo respeito, isso é ilegal e eu não vou assinar. Ponto.'", profile: "Rebelde" },
-            { text: "😶 'Melhor ficar quieto... ele é o chefe, deve saber o que faz'", profile: "Inocente" },
-            { text: "⚖️ 'Excelente ideia, mas o artigo 42 da LRF diz que... (30 minutos de explicação técnica)'", profile: "Âncora" },
-            { text: "👏 'Genial, chefia! Brilhante! (ps: alguém avisa o controle interno?)'", profile: "Bufão" }
+            { text: "🚫 'Diretoria, com todo respeito, isso é irregular e eu não vou assinar. Ponto.'", profile: "Rebelde" },
+            { text: "😶 'Melhor ficar quieto... eles são a chefia, devem saber o que fazem'", profile: "Inocente" },
+            { text: "⚖️ 'Excelente ideia, mas o artigo 42 do regulamento diz que... (30 minutos de explicação técnica)'", profile: "Âncora" },
+            { text: "👏 'Genial, chefia! Brilhante! (ps: alguém avisa o compliance?)'", profile: "Bufão" }
         ]
     },
     {
         id: 10,
-        text: "O que mais te assusta no fechamento do balanço anual?",
+        text: "O que mais te assusta no fechamento do balanço mensal?",
         options: [
-            { text: "😴 'O tédio de ficar conferindo números. Prefiro estar na rua vendo as obras!'", profile: "Excêntrico" },
-            { text: "💔 'Ver que não conseguimos realizar aquele projeto social dos meus sonhos'", profile: "Sonhador" },
-            { text: "😱 'Um centavo fora do lugar! E se o Tribunal achar um erro de R$ 0,50?'", profile: "Neurótico" },
-            { text: "🎭 'Que usem meus relatórios impecáveis para fazer propaganda enganosa'", profile: "Cínico" }
+            { text: "😴 'O tédio de ficar conferindo números. Prefiro estar na área operacional!'", profile: "Excêntrico" },
+            { text: "💔 'Ver que não conseguimos realizar aquele projeto dos meus sonhos'", profile: "Sonhador" },
+            { text: "😱 'Um centavo fora do lugar! E se a auditoria achar um erro de R$ 0,50?'", profile: "Neurótico" },
+            { text: "🎭 'Que usem meus relatórios impecáveis para justificar decisões questionáveis'", profile: "Cínico" }
         ]
     }
 ];
@@ -105,101 +105,100 @@ const questions = [
 // Descrições dos perfis - Versão Descontraída
 const profiles = {
     "Âncora": {
-        name: "🦸‍♂️ O Super-Herói das Planilhas",
-        description: "Você é a pessoa que salva o dia com gráficos e leis! Enquanto todos correm desesperados, você já tem a planilha pronta, o artigo da lei citado e a solução na ponta da língua. Seu superpoder? Transformar caos em colunas organizadas!",
+        name: "🌳 O Guardião das Regras",
+        description: "Você é a pessoa que mantém tudo nos eixos! Enquanto todos correm desesperados, você já tem a planilha pronta, o regulamento citado e a solução na ponta da língua. Seu superpoder? Transformar caos em processos organizados!",
         disc: "C (Conformidade)",
-        priority: "Salvar o mundo, uma planilha de cada vez"
+        priority: "Manter a harmonia através da organização"
     },
     "Sonhador": {
-        name: "🌈 O Mestre dos Sonhos Coloridos",
-        description: "Você vê possibilidades onde outros veem problemas! Seu orçamento tem arco-íris e unicórnios, e você genuinamente acredita que otimismo pode cobrir qualquer rombo. 'Dinheiro? Isso é detalhe!' é seu lema favorito.",
+        name: "🌈 O Visionário Criativo",
+        description: "Você vê possibilidades onde outros veem problemas! Seu planejamento tem cores e inovações, e você genuinamente acredita que criatividade pode superar qualquer obstáculo. 'Limites? Isso é detalhe!' é seu lema favorito.",
         disc: "I (Influência)",
-        priority: "Espalhar alegria e projetos impossíveis"
+        priority: "Inspirar a equipe com novas ideias"
     },
     "Neurótico": {
-        name: "😰 O Detetive do Apocalipse",
-        description: "Você já previu 157 formas diferentes do mundo acabar... só nesta semana! Enquanto todos comemoram, você já está preparando o plano B, C e D para quando tudo der errado. Seu lema: 'Melhor prevenir do que... bem, você sabe.'",
+        name: "🍃 O Protetor Preventivo",
+        description: "Você já previu 157 formas diferentes dos projetos darem errado... só nesta semana! Enquanto todos comemoram, você já está preparando o plano B, C e D. Seu lema: 'Melhor prevenir do que remediar, sempre!'",
         disc: "C (Conformidade)",
-        priority: "Sobreviver ao próximo desastre iminente"
+        priority: "Garantir que tudo funcione perfeitamente"
     },
     "Rebelde": {
-        name: "🔥 O Justiceiro das Regras",
-        description: "Regras? Limites? São apenas sugestões criativas para você! Você vê burocracia como um desafio pessoal e adora encontrar 'atalhos criativos'. Seu escritório deveria ter uma placa: 'Cuidado: ideias revolucionárias em andamento'.",
+        name: "🔥 O Agente de Mudanças",
+        description: "Regras? Limites? São apenas convites para pensar diferente! Você vê burocracia como oportunidade para inovar e adora encontrar 'soluções criativas'. Seu espaço deveria ter uma placa: 'Cuidado: transformação em progresso'.",
         disc: "D (Dominância)",
-        priority: "Mudar o sistema (com ou sem permissão)"
+        priority: "Evoluir os processos constantemente"
     },
     "Inocente": {
-        name: "🐰 O Coelho da Harmonia",
-        description: "Você é tão fofinho que até as planilhas sorriem para você! Seu maior medo é ver alguém triste, então sempre arruma um jeitinho de ajudar todo mundo. Se o orçamento fosse uma festa, você seria o anfitrião que garante que todos se divirtam.",
+        name: "🌸 O Cultivador de Harmonia",
+        description: "Você é tão harmonioso que até as planilhas sorriem para você! Seu maior talento é fazer todo mundo se sentir acolhido e importante. Se o trabalho fosse um jardim, você seria o jardineiro que cuida de cada flor.",
         disc: "S (Estabilidade)",
-        priority: "Fazer todo mundo se sentir amado"
+        priority: "Cultivar um ambiente positivo para todos"
     },
     "Excêntrico": {
-        name: "🎪 O Diretor de Circo Criativo",
-        description: "Sua mente é um parque de diversões de ideias malucas! Enquanto todos discutem números, você está pensando em como financiar um teleférico ou criar um imposto sobre solidão. Sua mesa parece que uma festa passou por ali... e provavelmente passou mesmo!",
+        name: "🎪 O Semeador de Ideias",
+        description: "Sua mente é um viveiro de ideias inovadoras! Enquanto todos discutem processos, você está pensando em como revolucionar a forma de trabalhar. Seu espaço reflete sua criatividade - sempre cheio de vida e inspiração!",
         disc: "I (Influência)",
-        priority: "Transformar o tédio em diversão"
+        priority: "Oxigenar a equipe com novas perspectivas"
     },
     "Bufão": {
-        name: "🃏 O Mágico do Jeitinho",
-        description: "Você resolve problemas com um sorriso no rosto e uma piada na ponta da língua! Seu lema é: 'Por que fazer direito se podemos fazer divertido?' Especialista em encontrar atalhos criativos e distribuir cafezinhos durante as crises.",
+        name: "🌞 O Iluminador de Ambientes",
+        description: "Você resolve problemas com leveza e bom humor! Seu lema é: 'Por que fazer pesado se podemos fazer com alegria?' Especialista em encontrar soluções descomplicadas e espalhar energia positiva pelo ambiente.",
         disc: "I (Influência)",
-        priority: "Sobreviver rindo"
+        priority: "Manter o clima leve e produtivo"
     },
     "Cínico": {
-        name: "🦉 O Sábio do 'Eu Avisei'",
-        description: "Você já sabe que tudo vai dar errado... e geralmente está certo! Enquanto todos se empolgam com novos projetos, você já está de prontidão para dizer 'eu avisei'. Seu superpoder? Ver o fracasso antes mesmo dele acontecer.",
+        name: "🦉 O Observador Realista",
+        description: "Você tem o dom de enxergar os desafios antes deles aparecerem! Enquanto todos se empolgam com novidades, você já está avaliando os riscos. Seu talento? Antecipar problemas e preparar a equipe.",
         disc: "C (Conformidade)",
-        priority: "Provocar o 'eu disse' com precisão cirúrgica"
+        priority: "Manter os pés no chão com sabedoria"
     },
     "Narcisista": {
-        name: "👑 A Estrela do Show",
-        description: "O universo gira em torno de você - e que universo maravilhoso! Seus projetos são os melhores, suas ideias são brilhantes e, claro, seu departamento merece sempre o maior orçamento. Afinal, sem você, tudo desmoronaria!",
+        name: "🌺 O Florescer de Talentos",
+        description: "Você traz confiança e determinação para a equipe! Acredita firmemente no seu potencial e no da sua equipe. Seu departamento é seu jardim particular - cuida com dedicação para que tudo floresça lindamente.",
         disc: "D (Dominância)",
-        priority: "Manter o trono bem aquecido"
+        priority: "Fazer brilhar os talentos da equipe"
     },
     "Jogador": {
-        name: "🎲 O Mestre do Xadrez Social",
-        description: "Você vê a secretaria como um grande tabuleiro de xadrez, e adora uma boa jogada! Sua especialidade é transformar problemas orçamentários em oportunidades políticas. 'Vamos fazer uma troquinha?' é sua frase favorita.",
+        name: "🕊️ O Diplomata Natural",
+        description: "Você vê a equipe como um ecossistema onde cada um tem seu papel! Sua especialidade é criar sinergias e conectar pessoas. 'Vamos trabalhar juntos?' é sua frase favorita para construir pontes.",
         disc: "I (Influência) com traços D (Dominância)",
-        priority: "Ganhar o jogo, sempre"
+        priority: "Harmonizar diferentes talentos e visões"
     }
 };
 
-// Frases de carregamento por categoria de perfil
+// Frases de carregamento por categoria de perfil - Versão Reduzida
 const loadingMessages = {
     "Líderes": [
-        "Os resultados do seu perfil estão a caminho, mais determinados que um herói numa missão para salvar o café da empresa. A ansiedade é o único vilão que enfrentaremos por agora!",
-        "Relaxe, mestre estratégico! Sua análise está sendo preparada com a mesma precisão de um plano para dominar o mundo (ou pelo menos a próxima reunião).",
-        "Aguardem, guerreiros! Seu perfil de Liderança está sendo forjado no mesmo aço que a espada do Rei Arthur. Prometo que valerá a pena a espera."
+        "Analisando seu estilo de liderança natural...",
+        "Mapeando suas habilidades de influência...", 
+        "Finalizando seu perfil de guia da equipe..."
     ],
     "Criativos": [
-        "A análise do seu perfil está em sua última aventura antes de chegar até você. Aparentemente, ela parou para tomar um café com um Mago e já volta!",
-        "Calma, espírito livre! Sua análise está dando uma última volta pelo mundo para coletar inspirações. Ela volta cheia de histórias divertidas, assim como você!",
-        "Pensem no seu relatório como um mapa do tesouro. Os nossos cartógrafos (aka sistemas) estão desenhando os últimos detalhes para que você não caia na armadilha dos 'prazos curtos'."
+        "Explorando sua criatividade e inovação...",
+        "Mapeando suas ideias revolucionárias...",
+        "Preparando suas soluções criativas..."
     ],
     "Estáveis": [
-        "Fiquem tranquilos, queridos cuidadores. Sua análise está sendo preparada com todo o cuidado e atenção que vocês dedicam ao team. Nada de sustos ou surpresas desagradáveis!",
-        "Assim como um bolo no forno, sua análise precisa do tempo exato para ficar perfeita. Estamos aqui, vigiando para que não queime. Tudo sairá deliciosamente preciso!",
-        "Seu perfil de estabilidade e harmonia está quase pronto. Estamos dando os últimos retoques para garantir que a experiência seja tão tranquila quanto um domingo à tarde."
+        "Analisando seu talento para harmonia...",
+        "Mapeando suas habilidades de apoio...",
+        "Finalizando seu perfil de estabilidade..."
     ],
     "Analíticos": [
-        "Os nossos sistemas estão compilando dados com a precisão de um relógio suíço e a sabedoria de um mago. Qualquer desvio de 0,01% será devidamente recalibrado. Aguardem.",
-        "Relaxem, mentes analíticas! Estamos na fase de 'checagem dos checadores'. Garantindo que não haja nenhuma vírgula fora do lugar no seu perfil.",
-        "Pensem no processo como uma fórmula complexa sendo resolvida pelo próprio Einstein. A resposta final está a caminho, e será impecável."
+        "Processando sua atenção aos detalhes...",
+        "Analisando seu método organizacional...",
+        "Finalizando seu perfil de precisão..."
     ],
     "Geral": [
-        "Os oráculos dos arquétipos estão alinhando os dados cósmicos com suas respostas. Parece que o Herói e o Sábio estão tendo um debate... mas logo chegam a um consenso!",
-        "A máquina de análise está funcionando a todo vapor! Dizem que ela já identificou um 'Explorador' que quer fugir do relatório e um 'Cuidador' tentando acalmar todo mundo.",
-        "Estamos na reta final! Seu perfil está vestindo a fantasia do seu arquétipo dominante. Alguém apostou no 'Mago', mas as cartas ainda estão na mesa.",
-        "Calma, jovens padawans! O relatório da força está pronto, mas o arquétipo do Cavaleiro Jedi ainda está escolhendo o sabre de luz. Logo teremos novidades."
+        "Conectando suas respostas aos arquétipos...",
+        "Processando seu estilo único de trabalho...",
+        "Preparando sua análise personalizada..."
     ]
 };
 
 // Mapeamento de perfis para categorias
 const profileCategories = {
     "Âncora": "Analíticos",
-    "Sonhador": "Criativos",
+    "Sonhador": "Criativos", 
     "Neurótico": "Analíticos",
     "Rebelde": "Líderes",
     "Inocente": "Estáveis",
@@ -257,7 +256,7 @@ function showQuestion() {
     
     quizContainer.innerHTML = `
         <div class="question-container">
-            <div class="question-number">🎯 Pergunta ${currentQuestion + 1} de ${questions.length}</div>
+            <div class="question-number">🌱 Pergunta ${currentQuestion + 1} de ${questions.length}</div>
             <div class="question-text">${question.text}</div>
             <div class="options">${optionsHTML}</div>
         </div>
@@ -272,7 +271,7 @@ function showQuestion() {
     
     // Atualizar estado dos botões
     prevBtn.disabled = currentQuestion === 0;
-    nextBtn.textContent = currentQuestion === questions.length - 1 ? '🎊 Ver Resultados' : 'Próxima ➡️';
+    nextBtn.textContent = currentQuestion === questions.length - 1 ? '🌿 Ver Resultados' : 'Próxima ➡️';
 }
 
 // Selecionar uma opção
@@ -346,10 +345,10 @@ function showLoading() {
         
         if (messageIndex >= messages.length) {
             clearInterval(loadingInterval);
-            // Mostrar resultados após 2 segundos
-            setTimeout(showResults, 2000);
+            // Mostrar resultados após 3 segundos (aumentado)
+            setTimeout(showResults, 3000);
         }
-    }, 3000);
+    }, 4000); // Aumentado para 4 segundos por mensagem
 }
 
 // Mostrar resultados
@@ -371,7 +370,7 @@ function showResults() {
     const profileInfo = profiles[predominantProfile];
     profileName.textContent = profileInfo.name;
     profileDescription.innerHTML = `
-        <p><strong>🎭 Seu Estilo:</strong> ${profileInfo.name}</p>
+        <p><strong>🌿 Seu Estilo:</strong> ${profileInfo.name}</p>
         <p><strong>📊 Perfil DISC:</strong> ${profileInfo.disc}</p>
         <p><strong>🎯 Sua Missão:</strong> ${profileInfo.priority}</p>
         <p><strong>📖 Sua História:</strong> ${profileInfo.description}</p>
